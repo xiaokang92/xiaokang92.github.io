@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Python学习分享</title>
+    <link>https://xiaokang92.github.io/post/</link>
+    <description>Recent content in Posts on Python学习分享</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 08 Mar 2020 10:40:12 +0800</lastBuildDate>
+    
+	<atom:link href="https://xiaokang92.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>666</title>
+      <link>https://xiaokang92.github.io/post/666/</link>
+      <pubDate>Sun, 08 Mar 2020 10:40:12 +0800</pubDate>
+      
+      <guid>https://xiaokang92.github.io/post/666/</guid>
+      <description>⁶⁶ ⁶⁶⁶⁶⁶⁶ ⁶⁶66⁶⁶⁶⁶ ₆₆₆₆可以啊.这波 ₆₆₆₆⁶⁶⁶⁶⁶⁶卧槽 ⁶⁶666⁶⁶⁶⁶⁶⁶66⁶⁶⁶⁶ 卧槽⁶⁶⁶⁶⁶⁶ ⁶6666⁶⁶666₆₆₆₆₆ 666 ⁶⁶⁶⁶⁶⁶ 666666₆₆₆₆₆₆ ₆⁶⁶⁶ ⁶⁶⁶⁶⁶⁶ ⁶⁶66⁶⁶⁶⁶ ₆₆₆₆可以啊.这波 ₆₆₆₆⁶⁶⁶⁶⁶⁶卧槽 ⁶⁶666⁶⁶⁶⁶⁶⁶66⁶⁶⁶⁶ 卧⁶⁶⁶ ⁶⁶⁶⁶⁶⁶</description>
+    </item>
+    
+    <item>
+      <title>Mysql操作记录</title>
+      <link>https://xiaokang92.github.io/post/mysql%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Sun, 08 Mar 2020 10:39:13 +0800</pubDate>
+      
+      <guid>https://xiaokang92.github.io/post/mysql%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</guid>
+      <description>show databases; drop database world; create database test char set utf8; use test; show tables; select * from account_log; select * from goods; select goods_id,goods_name,shop_price from goods where cat_id !=3; select goods_id,goods_name,shop_price from goods where shop_price &amp;lt;= 100; select goods_id,goods_name,cat_id from goods where cat_id in(4,11); select goods_id,goods_name,cat_id from goods where cat_id = 4 or cat_id = 11; select goods_id,goods_name,shop_price from goods where shop_price between 100 and 500; select goods_id,goods_name,cat_id from goods where cat_id !</description>
+    </item>
+    
+    <item>
+      <title>Xlrd库操作excel表格</title>
+      <link>https://xiaokang92.github.io/post/xlrd%E5%BA%93%E6%93%8D%E4%BD%9Cexcel%E8%A1%A8%E6%A0%BC/</link>
+      <pubDate>Sun, 08 Mar 2020 10:36:57 +0800</pubDate>
+      
+      <guid>https://xiaokang92.github.io/post/xlrd%E5%BA%93%E6%93%8D%E4%BD%9Cexcel%E8%A1%A8%E6%A0%BC/</guid>
+      <description># xlrd库操作excel表格 import xlrd import sys lst = __file__.split(&#39;/&#39;)[:-1] lst.append(&#39;111.xlsx&#39;) excelDir = &#39;\\&#39;.join(lst) workbook = xlrd.open_workbook(excelDir) # 查看存在哪些sheet表 print(workbook.sheet_names()) name1 = workbook.sheet_names()[0] # 通过sheet名获取表格内容 workSheet = workbook.sheet_by_name(name1) # 读取一行 rows = workSheet.row_values(0) # 读取一格（行,列） clos = workSheet.cell_value(4, 1) clos1 = workSheet.cell(4, 1).value print(rows) print(clos) print(clos1) print(workSheet.cell(4, 1).ctype) # 写入Excel表格 import xlrd from xlutils.copy import copy import sys lst = __file__.split(&#39;/&#39;)[:-1] lst.append(&#39;111.xlsx&#39;) excelDir = &#39;\\&#39;.join(lst) value = [&#39;&#39;, &#39;man&#39;, 22, &#39;,china&#39;] # 定义需要写入的文本 rb = xlrd.</description>
+    </item>
+    
+    <item>
+      <title>MySQLdb操作</title>
+      <link>https://xiaokang92.github.io/post/mysqldb%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Sun, 08 Mar 2020 10:35:54 +0800</pubDate>
+      
+      <guid>https://xiaokang92.github.io/post/mysqldb%E6%93%8D%E4%BD%9C/</guid>
+      <description># 查询数据库 import MySQLdb conn = MySQLdb.connect( host=&#39;localhost&#39;, user=&#39;root&#39;, passwd=&#39;root&#39;, db=&#39;test&#39;, charset=&#39;utf8&#39; ) c = conn.cursor() c.execute(&amp;quot;select * from student&amp;quot;) rows = c.fetchall() for item in rows: print(item) # 数据库插入 import MySQLdb conn = MySQLdb.connect( host=&#39;localhost&#39;, user=&#39;root&#39;, passwd=&#39;root&#39;, db=&#39;test&#39;, charset=&#39;utf8&#39; ) c = conn.cursor() c.execute(&amp;quot;insert into student (sid,sname,sage,ssex) values(&#39;09&#39;,&#39;汪晓康&#39;,&#39;19920812&#39;,&#39;男&#39;)&amp;quot;) conn.commit() rows = c.fetchall() for item in rows: print(item) </description>
+    </item>
+    
+    <item>
+      <title>生成n位的随机验证码</title>
+      <link>https://xiaokang92.github.io/post/%E7%94%9F%E6%88%90n%E4%BD%8D%E7%9A%84%E9%9A%8F%E6%9C%BA%E9%AA%8C%E8%AF%81%E7%A0%81/</link>
+      <pubDate>Sun, 08 Mar 2020 10:23:00 +0800</pubDate>
+      
+      <guid>https://xiaokang92.github.io/post/%E7%94%9F%E6%88%90n%E4%BD%8D%E7%9A%84%E9%9A%8F%E6%9C%BA%E9%AA%8C%E8%AF%81%E7%A0%81/</guid>
+      <description># 生成n位的随机验证码 import random def Code(n=6, alph_flag=True): code = &#39;&#39; for i in range(n): rs1 = str(random.randint(0, 9)) if alph_flag: rs2 = chr(random.randint(97, 122)) rs3 = chr(random.randint(65, 90)) rs1 = random.choice([rs1, rs2, rs3]) code = code + rs1 return code print(Code(n=4, alph_flag=True))  </description>
+    </item>
+    
+    <item>
+      <title>创建一个简单webserver客户端</title>
+      <link>https://xiaokang92.github.io/post/%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95webserver%E5%AE%A2%E6%88%B7%E7%AB%AF/</link>
+      <pubDate>Sun, 08 Mar 2020 10:18:23 +0800</pubDate>
+      
+      <guid>https://xiaokang92.github.io/post/%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95webserver%E5%AE%A2%E6%88%B7%E7%AB%AF/</guid>
+      <description># 手写一个webserver客户端 import socket import re sk = socket.socket() sk.bind((&#39;127.0.0.1&#39;, 8080)) sk.listen() while True: conn, addr = sk.accept() data = conn.recv(9000) data_str = str(data, encoding=&#39;utf8&#39;) # print(data_str) res = re.match(&#39;\S+\s(\S+)\s&#39;, data_str) print(res) url = res.group(1) print(url) if url == &#39;/yingying/&#39;: msg = b&#39;hands up!&#39; elif url == &#39;/hpg/&#39;: msg = b&#39;hello word&#39; else: msg = b&#39;404 not found!&#39; conn.send(b&#39;HTTP/1.1 200 OK\r\n\r\n&#39;) conn.send(msg) conn.close() </description>
+    </item>
+    
+    <item>
+      <title>删除文件夹中低于7个文件的文件夹</title>
+      <link>https://xiaokang92.github.io/post/%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%AD%E4%BD%8E%E4%BA%8E7%E4%B8%AA%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9/</link>
+      <pubDate>Sun, 08 Mar 2020 10:16:01 +0800</pubDate>
+      
+      <guid>https://xiaokang92.github.io/post/%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%AD%E4%BD%8E%E4%BA%8E7%E4%B8%AA%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9/</guid>
+      <description>#删除文件夹中低于7个文件的文件夹 import os import shutil rs3 = __file__ rs4 = rs3.split(&amp;quot;/&amp;quot;)[:-1] temp_path = &#39;/&#39;.join(rs4) listDir = os.listdir(temp_path) # print(listDir) for item in listDir: item = temp_path + &amp;quot;/&amp;quot; + item if os.path.isdir(item): listDir1 = os.listdir(item) if len(listDir1) &amp;lt;= 6: shutil.rmtree(item) print(&amp;quot;remove success&amp;quot;,item) else: print(&amp;quot;this is file&amp;quot;)  </description>
+    </item>
+    
+    <item>
+      <title>爬虫：爬大量妹子图</title>
+      <link>https://xiaokang92.github.io/post/%E7%88%AC%E8%99%AB%E7%88%AC%E5%A4%A7%E9%87%8F%E5%A6%B9%E5%AD%90%E5%9B%BE/</link>
+      <pubDate>Sun, 08 Mar 2020 10:11:43 +0800</pubDate>
+      
+      <guid>https://xiaokang92.github.io/post/%E7%88%AC%E8%99%AB%E7%88%AC%E5%A4%A7%E9%87%8F%E5%A6%B9%E5%AD%90%E5%9B%BE/</guid>
+      <description>#!/usr/bin/python # coding: UTF-8 import requests import re import os def GetLink(link): headers = {&#39;User-Agent&#39;: &#39;Mozilla/5.0 (Windows; U; Windows NT6.1; en-US; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6&#39;} r = requests.get(link, headers=headers, timeout=20) r.encoding = r.apparent_encoding html_doc = r.text pattern = re.compile(r&#39;\&amp;lt;a\s+href\=\&amp;quot;(\/pn\.x\S+)\&amp;quot;\s+title\=\&amp;quot;(\S+)\&amp;quot;\s+target&#39;) result1 = pattern.findall(html_doc) return result1 def GetPicture(link): headers = {&#39;User-Agent&#39;: &#39;Mozilla/5.0 (Windows; U; Windows NT6.1; en-US; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6&#39;} r = requests.get(link, headers=headers, timeout=20) r.encoding = r.apparent_encoding html_doc = r.text &amp;quot;&amp;quot;&amp;quot; src=&amp;quot;https://pic.ssz91.com/d7/3643/364391-1.jpg&amp;quot; &amp;quot;&amp;quot;&amp;quot; pattern = re.</description>
+    </item>
+    
+    <item>
+      <title>基于种子搜的番号搜索工具</title>
+      <link>https://xiaokang92.github.io/post/%E5%9F%BA%E4%BA%8E%E7%A7%8D%E5%AD%90%E6%90%9C%E7%9A%84%E7%95%AA%E5%8F%B7%E6%90%9C%E7%B4%A2%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Sun, 08 Mar 2020 10:05:27 +0800</pubDate>
+      
+      <guid>https://xiaokang92.github.io/post/%E5%9F%BA%E4%BA%8E%E7%A7%8D%E5%AD%90%E6%90%9C%E7%9A%84%E7%95%AA%E5%8F%B7%E6%90%9C%E7%B4%A2%E5%B7%A5%E5%85%B7/</guid>
+      <description>#!/usr/bin/python # coding: UTF-8 import requests from bs4 import BeautifulSoup import re print(&amp;quot;请输入番号&amp;quot;) fh = input(&amp;quot;番号是：&amp;quot;) print(fh) link1 = &amp;quot;https://www.sobt5.vip/q/&amp;quot;+fh+&amp;quot;.html&amp;quot; headlink = &amp;quot;https://www.sobt5.vip&amp;quot; def GetLink(link): headers = {&#39;User-Agent&#39; : &#39;Mozilla/5.0 (Windows; U; Windows NT6.1; en-US; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6&#39;} r = requests.get(link, headers= headers) r.encoding = r.apparent_encoding html_doc = r.text soup = BeautifulSoup(html_doc,&amp;quot;html.parser&amp;quot;) pattern = re.compile(r&#39;a href=&amp;quot;(\S+.html)&amp;quot;\s+target=&#39;) result1 = pattern.findall(html_doc) return result1 def GetTorrent(link): headers = {&#39;User-Agent&#39; : &#39;Mozilla/5.0 (Windows; U; Windows NT6.</description>
+    </item>
+    
+  </channel>
+</rss>
