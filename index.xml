@@ -5,10 +5,24 @@
     <link>https://xiaokang92.github.io/</link>
     <description>Recent content on Python学习</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 08 Mar 2020 23:21:59 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 09 Mar 2020 00:19:52 +0800</lastBuildDate>
     
 	<atom:link href="https://xiaokang92.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>RobotFramework自定义Library</title>
+      <link>https://xiaokang92.github.io/post/robotframework%E8%87%AA%E5%AE%9A%E4%B9%89library/</link>
+      <pubDate>Mon, 09 Mar 2020 00:19:52 +0800</pubDate>
+      
+      <guid>https://xiaokang92.github.io/post/robotframework%E8%87%AA%E5%AE%9A%E4%B9%89library/</guid>
+      <description>RobotFramework是开源的项目，我们可以根据项目需要，对RF进行二次开发，比如可以自定义关键字库。
+自定义Library demo
+本文自定义了一个叫NewLibrary的库 C:\Users\Administrator\AppData\Local\Programs\Python\Python37\Lib\site-packages\NewLibrary  在\Lib\site-packages\目录下创建一个NewLibrary文件夹，并且新增两个py文件：init.py , myclass.py
+文件的内容如下： init.py
+from myclass import MyClass class NewLibrary(MyClass): ROBOT_LIBRARY_SCOPE = &#39;GLOBAL&#39;  myclass.py
+from selenium import webdriver import time class MyClass(object): def __init__(self): pass def printMsg(self, msg): print(&amp;quot;hello&amp;quot; + msg) def SlideTieBa(self): browser = webdriver.Chrome() browser.implicitly_wait(30) browser.get(&amp;quot;https://tieba.baidu.com/&amp;quot;) browser.maximize_window() Listcookie = [{&#39;name&#39;:&amp;quot;STOKEN&amp;quot;,&#39;value&#39;:&amp;quot;3c6363cb0bede0cfd3ab8126b2700ad471e491ce0cc56a40f147f6995&amp;quot;} ,{&#39;name&#39;:&amp;quot;BDUSS&amp;quot;,&#39;value&#39;:&amp;quot;RzOVVQY09oaXAyeGFETTJIS3lXU2lUWk9iYTBtRUxjSmRIYmswZ3c2aDFsNFplRVFBQUFBJAAAEAAABEE-sk1Nm4x9K7wqUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHUKX151Cl9eVz&amp;quot;}] for cookie in Listcookie: browser.add_cookie(cookie) browser.get(&amp;quot;https://tieba.baidu.com/&amp;quot;) browser.refresh() for i in range(1000): t = i #tt = &#39;window.scrollBy(0,&#39; + str(t) + &#39;)&#39; tt = &#39;window.</description>
+    </item>
     
     <item>
       <title>RobotFramework框架：Cookie登录和缓慢滚动下滑</title>
@@ -20,7 +34,7 @@
 浏览器滚动是使用for循环，调用execute javascript方法并增加sleep实现的。
 demo Cookie登录和缓慢滚动下滑
 ride edit中的代码
-浏览器滚动下滑 open browser https://tieba.baidu.com/ chrome maximize browser window add cookie BDUSS RzOVVQY09oaXAyeGFETTJIS3lXU2lUWk9iYTBtRUxjSmRIYmswZ3c2aDFsNFplRVFBQUFBJCQAAAAAAAAAAAEAAABEE-sk1Nm4x9K7wqUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHUKX151Cl9eVz add cookie STOKEN 3c6363cb0bede0cfd3ab8126b256cd0b7700ad471e491ce0cc56a40f147f6995 goto https://tieba.baidu.com/ FOR ${i} IN RANGE 1000 \ ${t} setvariable ${i}*5 \ evaluate str(${t}) \ ${tt} Catenate SEPARATOR= document.documentElement.scrollTop= ${t} \ execute javascript ${tt} \ sleep 0.01  </description>
+浏览器滚动下滑 open browser https://tieba.baidu.com/ chrome maximize browser window add cookie BDUSS RzOVVQY09oaXAyeGFETTJIS3lXU2lUWk9iYTBtRUxjSmRIYmswZ2aDFsNFplRVFBQUFBJCQAAAAAAAAAAAEAAABEE-sk1Nm4x9K7wqUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHUKX151Cl9eVz add cookie STOKEN 3c6363cb0bede0cfd3ab8126b256cd0b7700ad471e491ce0cc56a40f147f6995 goto https://tieba.baidu.com/ FOR ${i} IN RANGE 1000 \ ${t} setvariable ${i}*5 \ evaluate str(${t}) \ ${tt} Catenate SEPARATOR= document.documentElement.scrollTop= ${t} \ execute javascript ${tt} \ sleep 0.01  </description>
     </item>
     
     <item>
