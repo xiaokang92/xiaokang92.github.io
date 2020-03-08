@@ -5,10 +5,23 @@
     <link>https://xiaokang92.github.io/post/</link>
     <description>Recent content in Posts on Python学习</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 08 Mar 2020 10:40:12 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 08 Mar 2020 23:21:59 +0800</lastBuildDate>
     
 	<atom:link href="https://xiaokang92.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>RobotFramework框架：Cookie登录和缓慢滚动下滑</title>
+      <link>https://xiaokang92.github.io/post/cookie%E7%99%BB%E5%BD%95%E5%92%8C%E7%BC%93%E6%85%A2%E6%BB%9A%E5%8A%A8%E4%B8%8B%E6%BB%91/</link>
+      <pubDate>Sun, 08 Mar 2020 23:21:59 +0800</pubDate>
+      
+      <guid>https://xiaokang92.github.io/post/cookie%E7%99%BB%E5%BD%95%E5%92%8C%E7%BC%93%E6%85%A2%E6%BB%9A%E5%8A%A8%E4%B8%8B%E6%BB%91/</guid>
+      <description>cookie是手工登录账号后，通过get cookies获取的，然后再填入代码中。
+浏览器滚动是使用for循环，调用execute javascript方法并增加sleep实现的。
+demo Cookie登录和缓慢滚动下滑
+ride edit中的代码
+浏览器滚动下滑 open browser https://tieba.baidu.com/ chrome maximize browser window add cookie BDUSS RzOVVQY09oaXAyeGFETTJIS3lXU2lUWk9iYTBtRUxjSmRIYmswZ3c2aDFsNFplRVFBQUFBJCQAAAAAAAAAAAEAAABEE-sk1Nm4x9K7wqUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHUKX151Cl9eVz add cookie STOKEN 3c6363cb0bede0cfd3ab8126b256cd0b7700ad471e491ce0cc56a40f147f6995 goto https://tieba.baidu.com/ FOR ${i} IN RANGE 1000 \ ${t} setvariable ${i}*5 \ evaluate str(${t}) \ ${tt} Catenate SEPARATOR= document.documentElement.scrollTop= ${t} \ execute javascript ${tt} \ sleep 0.01  </description>
+    </item>
     
     <item>
       <title>666</title>
@@ -72,7 +85,8 @@ demo gif</description>
       <pubDate>Sun, 08 Mar 2020 10:16:01 +0800</pubDate>
       
       <guid>https://xiaokang92.github.io/post/%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%AD%E4%BD%8E%E4%BA%8E7%E4%B8%AA%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9/</guid>
-      <description>#删除文件夹中低于7个文件的文件夹 import os import shutil rs3 = __file__ rs4 = rs3.split(&amp;quot;/&amp;quot;)[:-1] temp_path = &#39;/&#39;.join(rs4) listDir = os.listdir(temp_path) # print(listDir) for item in listDir: item = temp_path + &amp;quot;/&amp;quot; + item if os.path.isdir(item): listDir1 = os.listdir(item) if len(listDir1) &amp;lt;= 6: shutil.rmtree(item) print(&amp;quot;remove success&amp;quot;,item) else: print(&amp;quot;this is file&amp;quot;)  </description>
+      <description>演示demo
+#删除文件夹中低于7个文件的文件夹 import os import shutil rs3 = __file__ rs4 = rs3.split(&amp;quot;/&amp;quot;)[:-1] temp_path = &#39;/&#39;.join(rs4) listDir = os.listdir(temp_path) # print(listDir) for item in listDir: item = temp_path + &amp;quot;/&amp;quot; + item if os.path.isdir(item): listDir1 = os.listdir(item) if len(listDir1) &amp;lt;= 6: shutil.rmtree(item) print(&amp;quot;remove success&amp;quot;,item) else: print(&amp;quot;this is file&amp;quot;)  </description>
     </item>
     
     <item>
