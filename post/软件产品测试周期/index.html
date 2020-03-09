@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-cn">
   <head>
-    <title>删除文件夹中低于7个文件的文件夹 // Python学习</title>
+    <title>软件产品测试周期 // Python学习</title>
     <meta charset="utf-8" />
     <meta name="generator" content="Hugo 0.66.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,17 +11,19 @@
 
     
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="删除文件夹中低于7个文件的文件夹"/>
-<meta name="twitter:description" content="演示demo
-#删除文件夹中低于7个文件的文件夹 import os import shutil rs3 = __file__ rs4 = rs3.split(&quot;/&quot;)[:-1] temp_path = &#39;/&#39;.join(rs4) listDir = os.listdir(temp_path) # print(listDir) for item in listDir: item = temp_path &#43; &quot;/&quot; &#43; item if os.path.isdir(item): listDir1 = os.listdir(item) if len(listDir1) &lt;= 6: shutil.rmtree(item) print(&quot;remove success&quot;,item) else: print(&quot;this is file&quot;)  "/>
+<meta name="twitter:title" content="软件产品测试周期"/>
+<meta name="twitter:description" content="软件产品测试周期： 1.测试计划 2.测试设计 3.测试开发 4.测试执行 5.测试评估
+软件产品测试流程： 1.需求分析阶段 2.软件设计和编码阶段（进行单元测试） 3.集成系统 4.验收测试阶段
+按照开发阶段划分"/>
 
-    <meta property="og:title" content="删除文件夹中低于7个文件的文件夹" />
-<meta property="og:description" content="演示demo
-#删除文件夹中低于7个文件的文件夹 import os import shutil rs3 = __file__ rs4 = rs3.split(&quot;/&quot;)[:-1] temp_path = &#39;/&#39;.join(rs4) listDir = os.listdir(temp_path) # print(listDir) for item in listDir: item = temp_path &#43; &quot;/&quot; &#43; item if os.path.isdir(item): listDir1 = os.listdir(item) if len(listDir1) &lt;= 6: shutil.rmtree(item) print(&quot;remove success&quot;,item) else: print(&quot;this is file&quot;)  " />
+    <meta property="og:title" content="软件产品测试周期" />
+<meta property="og:description" content="软件产品测试周期： 1.测试计划 2.测试设计 3.测试开发 4.测试执行 5.测试评估
+软件产品测试流程： 1.需求分析阶段 2.软件设计和编码阶段（进行单元测试） 3.集成系统 4.验收测试阶段
+按照开发阶段划分" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://xiaokang92.github.io/post/%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%AD%E4%BD%8E%E4%BA%8E7%E4%B8%AA%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9/" />
-<meta property="article:published_time" content="2020-03-08T10:16:01+08:00" />
-<meta property="article:modified_time" content="2020-03-08T10:16:01+08:00" />
+<meta property="og:url" content="https://xiaokang92.github.io/post/%E8%BD%AF%E4%BB%B6%E4%BA%A7%E5%93%81%E6%B5%8B%E8%AF%95%E5%91%A8%E6%9C%9F/" />
+<meta property="article:published_time" content="2020-03-09T10:08:33+08:00" />
+<meta property="article:modified_time" content="2020-03-09T10:08:33+08:00" />
 
 
   </head>
@@ -48,14 +50,14 @@
       
   <article class="post">
     <header class="post-header">
-      <h1 class ="post-title">删除文件夹中低于7个文件的文件夹</h1>
+      <h1 class ="post-title">软件产品测试周期</h1>
       <div class="post-meta">
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
   <title>calendar</title>
   <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
 </svg>
-          Mar 8, 2020
+          Mar 9, 2020
         </div>
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
@@ -66,26 +68,18 @@
         </div></div>
     </header>
     <div class="post-content">
-      <p><a href="http://q6vohrrg5.bkt.clouddn.com/%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%AD%E6%96%87%E4%BB%B6%E5%B0%91%E4%BA%8E7%E4%B8%AA%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9.gif">演示demo</a></p>
-<pre><code>#删除文件夹中低于7个文件的文件夹
-import os
-import shutil
-
-rs3 = __file__
-rs4 = rs3.split(&quot;/&quot;)[:-1]
-temp_path = '/'.join(rs4)
-listDir = os.listdir(temp_path)
-# print(listDir)
-for item in listDir:
-    item = temp_path + &quot;/&quot; + item
-    if os.path.isdir(item):
-        listDir1 = os.listdir(item)
-        if len(listDir1) &lt;= 6:
-            shutil.rmtree(item)
-            print(&quot;remove success&quot;,item)
-    else:
-        print(&quot;this is file&quot;)
-</code></pre>
+      <p>软件产品测试周期：
+1.测试计划
+2.测试设计
+3.测试开发
+4.测试执行
+5.测试评估</p>
+<p>软件产品测试流程：
+1.需求分析阶段
+2.软件设计和编码阶段（进行单元测试）
+3.集成系统
+4.验收测试阶段</p>
+<p>按照开发阶段划分</p>
 
     </div>
     <div class="post-footer">
