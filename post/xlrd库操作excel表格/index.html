@@ -64,46 +64,45 @@
         </div></div>
     </header>
     <div class="post-content">
-      <pre><code># xlrd库操作excel表格
-import xlrd
-import sys
+      <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">	<span style="color:#75715e"># xlrd库操作excel表格</span>
+	<span style="color:#f92672">import</span> xlrd
+	<span style="color:#f92672">import</span> sys
 
-lst = __file__.split('/')[:-1]
-lst.append('111.xlsx')
-excelDir = '\\'.join(lst)
-workbook = xlrd.open_workbook(excelDir)
-# 查看存在哪些sheet表
-print(workbook.sheet_names())
-name1 = workbook.sheet_names()[0]
-# 通过sheet名获取表格内容
-workSheet = workbook.sheet_by_name(name1)
-# 读取一行
-rows = workSheet.row_values(0)
-# 读取一格（行,列）
-clos = workSheet.cell_value(4, 1)
-clos1 = workSheet.cell(4, 1).value
-print(rows)
-print(clos)
-print(clos1)
-print(workSheet.cell(4, 1).ctype)
+	lst <span style="color:#f92672">=</span> __file__<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;/&#39;</span>)[:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+	lst<span style="color:#f92672">.</span>append(<span style="color:#e6db74">&#39;111.xlsx&#39;</span>)
+	excelDir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>join(lst)
+	workbook <span style="color:#f92672">=</span> xlrd<span style="color:#f92672">.</span>open_workbook(excelDir)
+	<span style="color:#75715e"># 查看存在哪些sheet表</span>
+	<span style="color:#66d9ef">print</span>(workbook<span style="color:#f92672">.</span>sheet_names())
+	name1 <span style="color:#f92672">=</span> workbook<span style="color:#f92672">.</span>sheet_names()[<span style="color:#ae81ff">0</span>]
+	<span style="color:#75715e"># 通过sheet名获取表格内容</span>
+	workSheet <span style="color:#f92672">=</span> workbook<span style="color:#f92672">.</span>sheet_by_name(name1)
+	<span style="color:#75715e"># 读取一行</span>
+	rows <span style="color:#f92672">=</span> workSheet<span style="color:#f92672">.</span>row_values(<span style="color:#ae81ff">0</span>)
+	<span style="color:#75715e"># 读取一格（行,列）</span>
+	clos <span style="color:#f92672">=</span> workSheet<span style="color:#f92672">.</span>cell_value(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">1</span>)
+	clos1 <span style="color:#f92672">=</span> workSheet<span style="color:#f92672">.</span>cell(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">1</span>)<span style="color:#f92672">.</span>value
+	<span style="color:#66d9ef">print</span>(rows)
+	<span style="color:#66d9ef">print</span>(clos)
+	<span style="color:#66d9ef">print</span>(clos1)
+	<span style="color:#66d9ef">print</span>(workSheet<span style="color:#f92672">.</span>cell(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">1</span>)<span style="color:#f92672">.</span>ctype)
 
-# 写入Excel表格
-import xlrd
-from xlutils.copy import copy
-import sys
+	<span style="color:#75715e"># 写入Excel表格</span>
+	<span style="color:#f92672">import</span> xlrd
+	<span style="color:#f92672">from</span> xlutils.copy <span style="color:#f92672">import</span> copy
+	<span style="color:#f92672">import</span> sys
 
-lst = __file__.split('/')[:-1]
-lst.append('111.xlsx')
-excelDir = '\\'.join(lst)
-value = ['', 'man', 22, ',china']  # 定义需要写入的文本
-rb = xlrd.open_workbook(excelDir)  # 打开一个工作薄
-wb = copy(rb)  # 复制工作簿
-writeSheet = wb.get_sheet(0)  # 通过get_sheet方法找到sheet页
-writeSheet.write(1, 2, value[0])  # 写入单元格，1,2分别指的是单元格坐标，value[0]是具体写入的值
-wb.save(excelDir)  # 最后保存工作薄
-print('ok')
-</code></pre>
-
+	lst <span style="color:#f92672">=</span> __file__<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;/&#39;</span>)[:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+	lst<span style="color:#f92672">.</span>append(<span style="color:#e6db74">&#39;111.xlsx&#39;</span>)
+	excelDir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>join(lst)
+	value <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;man&#39;</span>, <span style="color:#ae81ff">22</span>, <span style="color:#e6db74">&#39;,china&#39;</span>]  <span style="color:#75715e"># 定义需要写入的文本</span>
+	rb <span style="color:#f92672">=</span> xlrd<span style="color:#f92672">.</span>open_workbook(excelDir)  <span style="color:#75715e"># 打开一个工作薄</span>
+	wb <span style="color:#f92672">=</span> copy(rb)  <span style="color:#75715e"># 复制工作簿</span>
+	writeSheet <span style="color:#f92672">=</span> wb<span style="color:#f92672">.</span>get_sheet(<span style="color:#ae81ff">0</span>)  <span style="color:#75715e"># 通过get_sheet方法找到sheet页</span>
+	writeSheet<span style="color:#f92672">.</span>write(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, value[<span style="color:#ae81ff">0</span>])  <span style="color:#75715e"># 写入单元格，1,2分别指的是单元格坐标，value[0]是具体写入的值</span>
+	wb<span style="color:#f92672">.</span>save(excelDir)  <span style="color:#75715e"># 最后保存工作薄</span>
+	<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;ok&#39;</span>)
+</code></pre></div>
     </div>
     <div class="post-footer">
       

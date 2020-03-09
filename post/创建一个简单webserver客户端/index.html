@@ -64,33 +64,33 @@
         </div></div>
     </header>
     <div class="post-content">
-      <pre><code># 手写一个webserver客户端
-import socket
-import re
+      <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">	<span style="color:#75715e"># 手写一个webserver客户端</span>
+	<span style="color:#f92672">import</span> socket
+	<span style="color:#f92672">import</span> re
 
-sk = socket.socket()
-sk.bind(('127.0.0.1', 8080))
-sk.listen()
+	sk <span style="color:#f92672">=</span> socket<span style="color:#f92672">.</span>socket()
+	sk<span style="color:#f92672">.</span>bind((<span style="color:#e6db74">&#39;127.0.0.1&#39;</span>, <span style="color:#ae81ff">8080</span>))
+	sk<span style="color:#f92672">.</span>listen()
 
-while True:
-    conn, addr = sk.accept()
-    data = conn.recv(9000)
-    data_str = str(data, encoding='utf8')
-    # print(data_str)
-    res = re.match('\S+\s(\S+)\s', data_str)
-    print(res)
-    url = res.group(1)
-    print(url)
-    if url == '/yingying/':
-        msg = b'hands up!'
-    elif url == '/hpg/':
-        msg = b'hello word'
-    else:
-        msg = b'404 not found!'
-        conn.send(b'HTTP/1.1 200 OK\r\n\r\n')
-        conn.send(msg)
-        conn.close()</code></pre>
-
+	<span style="color:#66d9ef">while</span> True:
+	    conn, addr <span style="color:#f92672">=</span> sk<span style="color:#f92672">.</span>accept()
+	    data <span style="color:#f92672">=</span> conn<span style="color:#f92672">.</span>recv(<span style="color:#ae81ff">9000</span>)
+	    data_str <span style="color:#f92672">=</span> str(data, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;utf8&#39;</span>)
+	    <span style="color:#75715e"># print(data_str)</span>
+	    res <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>match(<span style="color:#e6db74">&#39;\S+\s(\S+)\s&#39;</span>, data_str)
+	    <span style="color:#66d9ef">print</span>(res)
+	    url <span style="color:#f92672">=</span> res<span style="color:#f92672">.</span>group(<span style="color:#ae81ff">1</span>)
+	    <span style="color:#66d9ef">print</span>(url)
+	    <span style="color:#66d9ef">if</span> url <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;/yingying/&#39;</span>:
+	        msg <span style="color:#f92672">=</span> <span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;hands up!&#39;</span>
+	    <span style="color:#66d9ef">elif</span> url <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;/hpg/&#39;</span>:
+	        msg <span style="color:#f92672">=</span> <span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;hello word&#39;</span>
+	    <span style="color:#66d9ef">else</span>:
+	        msg <span style="color:#f92672">=</span> <span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;404 not found!&#39;</span>
+	        conn<span style="color:#f92672">.</span>send(<span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;HTTP/1.1 200 OK</span><span style="color:#ae81ff">\r\n\r\n</span><span style="color:#e6db74">&#39;</span>)
+	        conn<span style="color:#f92672">.</span>send(msg)
+	        conn<span style="color:#f92672">.</span>close()
+</code></pre></div>
     </div>
     <div class="post-footer">
       

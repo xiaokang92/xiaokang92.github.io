@@ -17,7 +17,7 @@
       <pubDate>Sun, 08 Mar 2020 10:35:54 +0800</pubDate>
       
       <guid>https://xiaokang92.github.io/post/mysqldb%E6%93%8D%E4%BD%9C/</guid>
-      <description># 查询数据库 import MySQLdb conn = MySQLdb.connect( host=&#39;localhost&#39;, user=&#39;root&#39;, passwd=&#39;root&#39;, db=&#39;test&#39;, charset=&#39;utf8&#39; ) c = conn.cursor() c.execute(&amp;quot;select * from student&amp;quot;) rows = c.fetchall() for item in rows: print(item) # 数据库插入 import MySQLdb conn = MySQLdb.connect( host=&#39;localhost&#39;, user=&#39;root&#39;, passwd=&#39;root&#39;, db=&#39;test&#39;, charset=&#39;utf8&#39; ) c = conn.cursor() c.execute(&amp;quot;insert into student (sid,sname,sage,ssex) values(&#39;09&#39;,&#39;汪晓康&#39;,&#39;19920812&#39;,&#39;男&#39;)&amp;quot;) conn.commit() rows = c.fetchall() for item in rows: print(item) </description>
+      <description># 查询数据库 import MySQLdb conn = MySQLdb.connect( host=&amp;#39;localhost&amp;#39;, user=&amp;#39;root&amp;#39;, passwd=&amp;#39;root&amp;#39;, db=&amp;#39;test&amp;#39;, charset=&amp;#39;utf8&amp;#39; ) c = conn.cursor() c.execute(&amp;#34;select * from student&amp;#34;) rows = c.fetchall() for item in rows: print(item) # 数据库插入 import MySQLdb conn = MySQLdb.connect( host=&amp;#39;localhost&amp;#39;, user=&amp;#39;root&amp;#39;, passwd=&amp;#39;root&amp;#39;, db=&amp;#39;test&amp;#39;, charset=&amp;#39;utf8&amp;#39; ) c = conn.cursor() c.execute(&amp;#34;insert into student (sid,sname,sage,ssex) values(&amp;#39;09&amp;#39;,&amp;#39;汪晓康&amp;#39;,&amp;#39;19920812&amp;#39;,&amp;#39;男&amp;#39;)&amp;#34;) conn.commit() rows = c.fetchall() for item in rows: print(item) </description>
     </item>
     
   </channel>
