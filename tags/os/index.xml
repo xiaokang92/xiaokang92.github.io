@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OS on Python学习</title>
+    <link>https://xiaokang92.github.io/tags/os/</link>
+    <description>Recent content in OS on Python学习</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 08 Mar 2020 10:16:01 +0800</lastBuildDate>
+    
+	<atom:link href="https://xiaokang92.github.io/tags/os/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>删除文件夹中低于7个文件的文件夹</title>
+      <link>https://xiaokang92.github.io/post/%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%AD%E4%BD%8E%E4%BA%8E7%E4%B8%AA%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9/</link>
+      <pubDate>Sun, 08 Mar 2020 10:16:01 +0800</pubDate>
+      
+      <guid>https://xiaokang92.github.io/post/%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%AD%E4%BD%8E%E4%BA%8E7%E4%B8%AA%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9/</guid>
+      <description>演示demo
+#删除文件夹中低于7个文件的文件夹 import os import shutil rs3 = __file__ rs4 = rs3.split(&amp;#34;/&amp;#34;)[:-1] temp_path = &amp;#39;/&amp;#39;.join(rs4) listDir = os.listdir(temp_path) # print(listDir) for item in listDir: item = temp_path + &amp;#34;/&amp;#34; + item if os.path.isdir(item): listDir1 = os.listdir(item) if len(listDir1) &amp;lt;= 6: shutil.rmtree(item) print(&amp;#34;remove success&amp;#34;,item) else: print(&amp;#34;this is file&amp;#34;) </description>
+    </item>
+    
+  </channel>
+</rss>

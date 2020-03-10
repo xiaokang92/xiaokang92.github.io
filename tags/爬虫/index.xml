@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>爬虫 on Python学习</title>
+    <link>https://xiaokang92.github.io/tags/%E7%88%AC%E8%99%AB/</link>
+    <description>Recent content in 爬虫 on Python学习</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 08 Mar 2020 10:11:43 +0800</lastBuildDate>
+    
+	<atom:link href="https://xiaokang92.github.io/tags/%E7%88%AC%E8%99%AB/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>爬虫：爬大量妹子图</title>
+      <link>https://xiaokang92.github.io/post/%E7%88%AC%E8%99%AB%E7%88%AC%E5%A4%A7%E9%87%8F%E5%A6%B9%E5%AD%90%E5%9B%BE/</link>
+      <pubDate>Sun, 08 Mar 2020 10:11:43 +0800</pubDate>
+      
+      <guid>https://xiaokang92.github.io/post/%E7%88%AC%E8%99%AB%E7%88%AC%E5%A4%A7%E9%87%8F%E5%A6%B9%E5%AD%90%E5%9B%BE/</guid>
+      <description>#!/usr/bin/python # coding: UTF-8 import requests import re import os def GetLink(link): headers = {&amp;#39;User-Agent&amp;#39;: &amp;#39;Mozilla/5.0 (Windows; U; Windows NT6.1; en-US; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6&amp;#39;} r = requests.get(link, headers=headers, timeout=20) r.encoding = r.apparent_encoding html_doc = r.text pattern = re.compile(r&amp;#39;\&amp;lt;a\s+href\=\&amp;#34;(\/pn\.x\S+)\&amp;#34;\s+title\=\&amp;#34;(\S+)\&amp;#34;\s+target&amp;#39;) result1 = pattern.findall(html_doc) return result1 def GetPicture(link): headers = {&amp;#39;User-Agent&amp;#39;: &amp;#39;Mozilla/5.0 (Windows; U; Windows NT6.1; en-US; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6&amp;#39;} r = requests.get(link, headers=headers, timeout=20) r.encoding = r.apparent_encoding html_doc = r.text &amp;#34;&amp;#34;&amp;#34; src=&amp;#34;https://pic.ssz91.com/d7/3643/364391-1.jpg&amp;#34; &amp;#34;&amp;#34;&amp;#34; pattern = re.</description>
+    </item>
+    
+    <item>
+      <title>基于种子搜的番号搜索工具</title>
+      <link>https://xiaokang92.github.io/post/%E5%9F%BA%E4%BA%8E%E7%A7%8D%E5%AD%90%E6%90%9C%E7%9A%84%E7%95%AA%E5%8F%B7%E6%90%9C%E7%B4%A2%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Sun, 08 Mar 2020 10:05:27 +0800</pubDate>
+      
+      <guid>https://xiaokang92.github.io/post/%E5%9F%BA%E4%BA%8E%E7%A7%8D%E5%AD%90%E6%90%9C%E7%9A%84%E7%95%AA%E5%8F%B7%E6%90%9C%E7%B4%A2%E5%B7%A5%E5%85%B7/</guid>
+      <description>演示demo
+#!/usr/bin/python # coding: UTF-8 import requests from bs4 import BeautifulSoup import re print(&amp;#34;请输入番号&amp;#34;) fh = input(&amp;#34;番号是：&amp;#34;) print(fh) link1 = &amp;#34;https://www.sobt5.vip/q/&amp;#34;+fh+&amp;#34;.html&amp;#34; headlink = &amp;#34;https://www.sobt5.vip&amp;#34; def GetLink(link): headers = {&amp;#39;User-Agent&amp;#39; : &amp;#39;Mozilla/5.0 (Windows; U; Windows NT6.1; en-US; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6&amp;#39;} r = requests.get(link, headers= headers) r.encoding = r.apparent_encoding html_doc = r.text soup = BeautifulSoup(html_doc,&amp;#34;html.parser&amp;#34;) pattern = re.compile(r&amp;#39;a href=&amp;#34;(\S+.html)&amp;#34;\s+target=&amp;#39;) result1 = pattern.findall(html_doc) return result1 def GetTorrent(link): headers = {&amp;#39;User-Agent&amp;#39; : &amp;#39;Mozilla/5.0 (Windows; U; Windows NT6.</description>
+    </item>
+    
+  </channel>
+</rss>

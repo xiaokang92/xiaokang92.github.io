@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>excel on Python学习</title>
+    <link>https://xiaokang92.github.io/tags/excel/</link>
+    <description>Recent content in excel on Python学习</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 08 Mar 2020 10:36:57 +0800</lastBuildDate>
+    
+	<atom:link href="https://xiaokang92.github.io/tags/excel/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Xlrd库操作excel表格</title>
+      <link>https://xiaokang92.github.io/post/xlrd%E5%BA%93%E6%93%8D%E4%BD%9Cexcel%E8%A1%A8%E6%A0%BC/</link>
+      <pubDate>Sun, 08 Mar 2020 10:36:57 +0800</pubDate>
+      
+      <guid>https://xiaokang92.github.io/post/xlrd%E5%BA%93%E6%93%8D%E4%BD%9Cexcel%E8%A1%A8%E6%A0%BC/</guid>
+      <description># xlrd库操作excel表格 import xlrd import sys lst = __file__.split(&amp;#39;/&amp;#39;)[:-1] lst.append(&amp;#39;111.xlsx&amp;#39;) excelDir = &amp;#39;\\&amp;#39;.join(lst) workbook = xlrd.open_workbook(excelDir) # 查看存在哪些sheet表 print(workbook.sheet_names()) name1 = workbook.sheet_names()[0] # 通过sheet名获取表格内容 workSheet = workbook.sheet_by_name(name1) # 读取一行 rows = workSheet.row_values(0) # 读取一格（行,列） clos = workSheet.cell_value(4, 1) clos1 = workSheet.cell(4, 1).value print(rows) print(clos) print(clos1) print(workSheet.cell(4, 1).ctype) # 写入Excel表格 import xlrd from xlutils.copy import copy import sys lst = __file__.split(&amp;#39;/&amp;#39;)[:-1] lst.append(&amp;#39;111.xlsx&amp;#39;) excelDir = &amp;#39;\\&amp;#39;.join(lst) value = [&amp;#39;&amp;#39;, &amp;#39;man&amp;#39;, 22, &amp;#39;,china&amp;#39;] # 定义需要写入的文本 rb = xlrd.</description>
+    </item>
+    
+  </channel>
+</rss>

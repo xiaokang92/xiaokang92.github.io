@@ -6,10 +6,19 @@
     <description>Recent content in Python on Python学习</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 08 Mar 2020 10:35:54 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 08 Mar 2020 10:36:57 +0800</lastBuildDate>
     
 	<atom:link href="https://xiaokang92.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Xlrd库操作excel表格</title>
+      <link>https://xiaokang92.github.io/post/xlrd%E5%BA%93%E6%93%8D%E4%BD%9Cexcel%E8%A1%A8%E6%A0%BC/</link>
+      <pubDate>Sun, 08 Mar 2020 10:36:57 +0800</pubDate>
+      
+      <guid>https://xiaokang92.github.io/post/xlrd%E5%BA%93%E6%93%8D%E4%BD%9Cexcel%E8%A1%A8%E6%A0%BC/</guid>
+      <description># xlrd库操作excel表格 import xlrd import sys lst = __file__.split(&amp;#39;/&amp;#39;)[:-1] lst.append(&amp;#39;111.xlsx&amp;#39;) excelDir = &amp;#39;\\&amp;#39;.join(lst) workbook = xlrd.open_workbook(excelDir) # 查看存在哪些sheet表 print(workbook.sheet_names()) name1 = workbook.sheet_names()[0] # 通过sheet名获取表格内容 workSheet = workbook.sheet_by_name(name1) # 读取一行 rows = workSheet.row_values(0) # 读取一格（行,列） clos = workSheet.cell_value(4, 1) clos1 = workSheet.cell(4, 1).value print(rows) print(clos) print(clos1) print(workSheet.cell(4, 1).ctype) # 写入Excel表格 import xlrd from xlutils.copy import copy import sys lst = __file__.split(&amp;#39;/&amp;#39;)[:-1] lst.append(&amp;#39;111.xlsx&amp;#39;) excelDir = &amp;#39;\\&amp;#39;.join(lst) value = [&amp;#39;&amp;#39;, &amp;#39;man&amp;#39;, 22, &amp;#39;,china&amp;#39;] # 定义需要写入的文本 rb = xlrd.</description>
+    </item>
     
     <item>
       <title>MySQLdb操作</title>
@@ -18,6 +27,54 @@
       
       <guid>https://xiaokang92.github.io/post/mysqldb%E6%93%8D%E4%BD%9C/</guid>
       <description># 查询数据库 import MySQLdb conn = MySQLdb.connect( host=&amp;#39;localhost&amp;#39;, user=&amp;#39;root&amp;#39;, passwd=&amp;#39;root&amp;#39;, db=&amp;#39;test&amp;#39;, charset=&amp;#39;utf8&amp;#39; ) c = conn.cursor() c.execute(&amp;#34;select * from student&amp;#34;) rows = c.fetchall() for item in rows: print(item) # 数据库插入 import MySQLdb conn = MySQLdb.connect( host=&amp;#39;localhost&amp;#39;, user=&amp;#39;root&amp;#39;, passwd=&amp;#39;root&amp;#39;, db=&amp;#39;test&amp;#39;, charset=&amp;#39;utf8&amp;#39; ) c = conn.cursor() c.execute(&amp;#34;insert into student (sid,sname,sage,ssex) values(&amp;#39;09&amp;#39;,&amp;#39;汪晓康&amp;#39;,&amp;#39;19920812&amp;#39;,&amp;#39;男&amp;#39;)&amp;#34;) conn.commit() rows = c.fetchall() for item in rows: print(item) </description>
+    </item>
+    
+    <item>
+      <title>生成n位的随机验证码</title>
+      <link>https://xiaokang92.github.io/post/%E7%94%9F%E6%88%90n%E4%BD%8D%E7%9A%84%E9%9A%8F%E6%9C%BA%E9%AA%8C%E8%AF%81%E7%A0%81/</link>
+      <pubDate>Sun, 08 Mar 2020 10:23:00 +0800</pubDate>
+      
+      <guid>https://xiaokang92.github.io/post/%E7%94%9F%E6%88%90n%E4%BD%8D%E7%9A%84%E9%9A%8F%E6%9C%BA%E9%AA%8C%E8%AF%81%E7%A0%81/</guid>
+      <description>随机验证码 Demo
+# 生成n位的随机验证码 import random def Code(n=6, alph_flag=True): code = &amp;#39;&amp;#39; for i in range(n): rs1 = str(random.randint(0, 9)) if alph_flag: rs2 = chr(random.randint(97, 122)) rs3 = chr(random.randint(65, 90)) rs1 = random.choice([rs1, rs2, rs3]) code = code + rs1 return code print(Code(n=4, alph_flag=True)) </description>
+    </item>
+    
+    <item>
+      <title>创建一个简单webserver客户端</title>
+      <link>https://xiaokang92.github.io/post/%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95webserver%E5%AE%A2%E6%88%B7%E7%AB%AF/</link>
+      <pubDate>Sun, 08 Mar 2020 10:18:23 +0800</pubDate>
+      
+      <guid>https://xiaokang92.github.io/post/%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95webserver%E5%AE%A2%E6%88%B7%E7%AB%AF/</guid>
+      <description># 手写一个webserver客户端 import socket import re sk = socket.socket() sk.bind((&amp;#39;127.0.0.1&amp;#39;, 8080)) sk.listen() while True: conn, addr = sk.accept() data = conn.recv(9000) data_str = str(data, encoding=&amp;#39;utf8&amp;#39;) # print(data_str) res = re.match(&amp;#39;\S+\s(\S+)\s&amp;#39;, data_str) print(res) url = res.group(1) print(url) if url == &amp;#39;/yingying/&amp;#39;: msg = b&amp;#39;hands up!&amp;#39; elif url == &amp;#39;/hpg/&amp;#39;: msg = b&amp;#39;hello word&amp;#39; else: msg = b&amp;#39;404 not found!&amp;#39; conn.send(b&amp;#39;HTTP/1.1 200 OK\r\n\r\n&amp;#39;) conn.send(msg) conn.close() </description>
+    </item>
+    
+    <item>
+      <title>删除文件夹中低于7个文件的文件夹</title>
+      <link>https://xiaokang92.github.io/post/%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%AD%E4%BD%8E%E4%BA%8E7%E4%B8%AA%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9/</link>
+      <pubDate>Sun, 08 Mar 2020 10:16:01 +0800</pubDate>
+      
+      <guid>https://xiaokang92.github.io/post/%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%AD%E4%BD%8E%E4%BA%8E7%E4%B8%AA%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9/</guid>
+      <description>演示demo
+#删除文件夹中低于7个文件的文件夹 import os import shutil rs3 = __file__ rs4 = rs3.split(&amp;#34;/&amp;#34;)[:-1] temp_path = &amp;#39;/&amp;#39;.join(rs4) listDir = os.listdir(temp_path) # print(listDir) for item in listDir: item = temp_path + &amp;#34;/&amp;#34; + item if os.path.isdir(item): listDir1 = os.listdir(item) if len(listDir1) &amp;lt;= 6: shutil.rmtree(item) print(&amp;#34;remove success&amp;#34;,item) else: print(&amp;#34;this is file&amp;#34;) </description>
+    </item>
+    
+    <item>
+      <title>爬虫：爬大量妹子图</title>
+      <link>https://xiaokang92.github.io/post/%E7%88%AC%E8%99%AB%E7%88%AC%E5%A4%A7%E9%87%8F%E5%A6%B9%E5%AD%90%E5%9B%BE/</link>
+      <pubDate>Sun, 08 Mar 2020 10:11:43 +0800</pubDate>
+      
+      <guid>https://xiaokang92.github.io/post/%E7%88%AC%E8%99%AB%E7%88%AC%E5%A4%A7%E9%87%8F%E5%A6%B9%E5%AD%90%E5%9B%BE/</guid>
+      <description>#!/usr/bin/python # coding: UTF-8 import requests import re import os def GetLink(link): headers = {&amp;#39;User-Agent&amp;#39;: &amp;#39;Mozilla/5.0 (Windows; U; Windows NT6.1; en-US; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6&amp;#39;} r = requests.get(link, headers=headers, timeout=20) r.encoding = r.apparent_encoding html_doc = r.text pattern = re.compile(r&amp;#39;\&amp;lt;a\s+href\=\&amp;#34;(\/pn\.x\S+)\&amp;#34;\s+title\=\&amp;#34;(\S+)\&amp;#34;\s+target&amp;#39;) result1 = pattern.findall(html_doc) return result1 def GetPicture(link): headers = {&amp;#39;User-Agent&amp;#39;: &amp;#39;Mozilla/5.0 (Windows; U; Windows NT6.1; en-US; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6&amp;#39;} r = requests.get(link, headers=headers, timeout=20) r.encoding = r.apparent_encoding html_doc = r.text &amp;#34;&amp;#34;&amp;#34; src=&amp;#34;https://pic.ssz91.com/d7/3643/364391-1.jpg&amp;#34; &amp;#34;&amp;#34;&amp;#34; pattern = re.</description>
+    </item>
+    
+    <item>
+      <title>基于种子搜的番号搜索工具</title>
+      <link>https://xiaokang92.github.io/post/%E5%9F%BA%E4%BA%8E%E7%A7%8D%E5%AD%90%E6%90%9C%E7%9A%84%E7%95%AA%E5%8F%B7%E6%90%9C%E7%B4%A2%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Sun, 08 Mar 2020 10:05:27 +0800</pubDate>
+      
+      <guid>https://xiaokang92.github.io/post/%E5%9F%BA%E4%BA%8E%E7%A7%8D%E5%AD%90%E6%90%9C%E7%9A%84%E7%95%AA%E5%8F%B7%E6%90%9C%E7%B4%A2%E5%B7%A5%E5%85%B7/</guid>
+      <description>演示demo
+#!/usr/bin/python # coding: UTF-8 import requests from bs4 import BeautifulSoup import re print(&amp;#34;请输入番号&amp;#34;) fh = input(&amp;#34;番号是：&amp;#34;) print(fh) link1 = &amp;#34;https://www.sobt5.vip/q/&amp;#34;+fh+&amp;#34;.html&amp;#34; headlink = &amp;#34;https://www.sobt5.vip&amp;#34; def GetLink(link): headers = {&amp;#39;User-Agent&amp;#39; : &amp;#39;Mozilla/5.0 (Windows; U; Windows NT6.1; en-US; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6&amp;#39;} r = requests.get(link, headers= headers) r.encoding = r.apparent_encoding html_doc = r.text soup = BeautifulSoup(html_doc,&amp;#34;html.parser&amp;#34;) pattern = re.compile(r&amp;#39;a href=&amp;#34;(\S+.html)&amp;#34;\s+target=&amp;#39;) result1 = pattern.findall(html_doc) return result1 def GetTorrent(link): headers = {&amp;#39;User-Agent&amp;#39; : &amp;#39;Mozilla/5.0 (Windows; U; Windows NT6.</description>
     </item>
     
   </channel>

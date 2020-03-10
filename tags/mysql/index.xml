@@ -6,10 +6,19 @@
     <description>Recent content in Mysql on Python学习</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 08 Mar 2020 10:35:54 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 08 Mar 2020 10:39:13 +0800</lastBuildDate>
     
 	<atom:link href="https://xiaokang92.github.io/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Mysql操作记录</title>
+      <link>https://xiaokang92.github.io/post/mysql%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Sun, 08 Mar 2020 10:39:13 +0800</pubDate>
+      
+      <guid>https://xiaokang92.github.io/post/mysql%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</guid>
+      <description>show databases; drop database world; create database test char set utf8; use test; show tables; select * from account_log; select * from goods; select goods_id,goods_name,shop_price from goods where cat_id !=3; select goods_id,goods_name,shop_price from goods where shop_price &amp;lt;= 100; select goods_id,goods_name,cat_id from goods where cat_id in(4,11); select goods_id,goods_name,cat_id from goods where cat_id = 4 or cat_id = 11; select goods_id,goods_name,shop_price from goods where shop_price between 100 and 500; select goods_id,goods_name,cat_id from goods where cat_id !</description>
+    </item>
     
     <item>
       <title>MySQLdb操作</title>
