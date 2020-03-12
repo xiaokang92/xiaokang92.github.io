@@ -6,10 +6,20 @@
     <description>Recent content in RobotFramework on Python学习</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 09 Mar 2020 00:19:52 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 12 Mar 2020 15:10:42 +0800</lastBuildDate>
     
 	<atom:link href="https://xiaokang92.github.io/tags/robotframework/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>RobotFramework两种下拉框选择</title>
+      <link>https://xiaokang92.github.io/post/robotframework%E4%B8%A4%E7%A7%8D%E4%B8%8B%E6%8B%89%E6%A1%86%E9%80%89%E6%8B%A9/</link>
+      <pubDate>Thu, 12 Mar 2020 15:10:42 +0800</pubDate>
+      
+      <guid>https://xiaokang92.github.io/post/robotframework%E4%B8%A4%E7%A7%8D%E4%B8%8B%E6%8B%89%E6%A1%86%E9%80%89%E6%8B%A9/</guid>
+      <description>两种下拉框选择demo
+浏览器悬浮显示并选择 open browser https://tieba.baidu.com/ chrome maximize browser window add cookie BDUSS RzOVVQY09oaXAyeGFETTJIS3lXU2lUWk9iYTRUxjSmRIYmswZ3c2aDFsNFplRVFBQUFBJCQAAAAAAAAAAAEAAABEE-sk1Nm4x9K7wqUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHUKX151Cl9e add cookie STOKEN 3c6363cb0bede0cfd3ab8126b256cd0b7700ad471e491ce0cc56a40f147f6995 goto https://tieba.baidu.com/ mouse over xpath=//li[@class=&amp;#34;u_username&amp;#34;] mouse over xpath=//li[@class=&amp;#34;u_itieba&amp;#34;]/a mouse down xpath=//li[@class=&amp;#34;u_itieba&amp;#34;]/a mouse up xpath=//li[@class=&amp;#34;u_itieba&amp;#34;]/a 浏览器下拉框选择 open browser https://tieba.baidu.com/ chrome maximize browser window add cookie BDUSS RzOVVQY09oaXAyeGFETTJIS3lXU2lUWiYTBtRUxjSmRIYmswZ3c2aDFsNFplRVFBQUFBJCQAAAAAAAAAAAEAAABEE-sk1Nm4x9K7wqUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHUKX151Cl9e add cookie STOKEN 3c6363cb0bede0cfd3ab8126b256cd0b7700ad471e491ce0cc56a40f147f6995 goto https://tieba.baidu.com/ click button xpath=//input[@name=&amp;#34;kw1&amp;#34;] FOR ${i} IN RANGE 9 \ log ${i} \ Press Key xpath=//input[@name=&amp;#34;kw1&amp;#34;] \ue015 \ sleep 0.5 Press Key xpath=//input[@name=&amp;#34;kw1&amp;#34;] \\13 </description>
+    </item>
     
     <item>
       <title>RobotFramework自定义Library</title>
