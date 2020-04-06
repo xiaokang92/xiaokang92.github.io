@@ -6,10 +6,32 @@
     <description>Recent content in Posts on Python学习</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 28 Mar 2020 10:25:09 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 06 Apr 2020 15:33:52 +0800</lastBuildDate>
     
 	<atom:link href="https://xiaokang92.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>有效电话号码</title>
+      <link>https://xiaokang92.github.io/post/%E6%9C%89%E6%95%88%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81/</link>
+      <pubDate>Mon, 06 Apr 2020 15:33:52 +0800</pubDate>
+      
+      <guid>https://xiaokang92.github.io/post/%E6%9C%89%E6%95%88%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81/</guid>
+      <description>给定一个包含电话号码列表（一行一个电话号码）的文本文件 file.txt，写一个 bash 脚本输出所有有效的电话号码。
+你可以假设一个有效的电话号码必须满足以下两种格式： (xxx) xxx-xxxx 或 xxx-xxx-xxxx。（x 表示一个数字）
+你也可以假设每行前后没有多余的空格字符。
+示例:
+假设 file.txt 内容如下：
+987-123-4567
+123 456 7890
+(123) 456-7890
+你的脚本应当输出下列有效的电话号码：
+987-123-4567
+(123) 456-7890
+解析思路： 通过grep + 正则表达式的方式来过滤字符串
+grep -P 可以使用标准正则
+grep -P &#39;(\(\d{3}\)\s|\d{3}-)\d{3}-\d{4}&#39; file.txt demo 有效电话号码</description>
+    </item>
     
     <item>
       <title>Linux基础正则</title>

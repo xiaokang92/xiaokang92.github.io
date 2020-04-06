@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-cn">
+  <head>
+    <title>有效电话号码 // Python学习</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.66.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://xiaokang92.github.io/css/main.min.f90f5edd436ec7b74ad05479a05705770306911f721193e7845948fb07fe1335.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="有效电话号码"/>
+<meta name="twitter:description" content="给定一个包含电话号码列表（一行一个电话号码）的文本文件 file.txt，写一个 bash 脚本输出所有有效的电话号码。
+你可以假设一个有效的电话号码必须满足以下两种格式： (xxx) xxx-xxxx 或 xxx-xxx-xxxx。（x 表示一个数字）
+你也可以假设每行前后没有多余的空格字符。
+示例:
+假设 file.txt 内容如下：
+987-123-4567
+123 456 7890
+(123) 456-7890
+你的脚本应当输出下列有效的电话号码：
+987-123-4567
+(123) 456-7890
+解析思路： 通过grep &#43; 正则表达式的方式来过滤字符串
+grep -P 可以使用标准正则
+grep -P &#39;(\(\d{3}\)\s|\d{3}-)\d{3}-\d{4}&#39; file.txt demo 有效电话号码"/>
+
+    <meta property="og:title" content="有效电话号码" />
+<meta property="og:description" content="给定一个包含电话号码列表（一行一个电话号码）的文本文件 file.txt，写一个 bash 脚本输出所有有效的电话号码。
+你可以假设一个有效的电话号码必须满足以下两种格式： (xxx) xxx-xxxx 或 xxx-xxx-xxxx。（x 表示一个数字）
+你也可以假设每行前后没有多余的空格字符。
+示例:
+假设 file.txt 内容如下：
+987-123-4567
+123 456 7890
+(123) 456-7890
+你的脚本应当输出下列有效的电话号码：
+987-123-4567
+(123) 456-7890
+解析思路： 通过grep &#43; 正则表达式的方式来过滤字符串
+grep -P 可以使用标准正则
+grep -P &#39;(\(\d{3}\)\s|\d{3}-)\d{3}-\d{4}&#39; file.txt demo 有效电话号码" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xiaokang92.github.io/post/%E6%9C%89%E6%95%88%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81/" />
+<meta property="article:published_time" content="2020-04-06T15:33:52+08:00" />
+<meta property="article:modified_time" content="2020-04-06T15:33:52+08:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://xiaokang92.github.io"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <h1>Python学习</h1>
+      <p>微信号:wangxiaokang0812   QQmail:449103166@qq.com  </p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/xiaokang92" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+          <a target="_blank" href="https://baidu.com" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-link">
+  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">有效电话号码</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Apr 6, 2020
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      <p>给定一个包含电话号码列表（一行一个电话号码）的文本文件 file.txt，写一个 bash 脚本输出所有有效的电话号码。<br>
+你可以假设一个有效的电话号码必须满足以下两种格式： (xxx) xxx-xxxx 或 xxx-xxx-xxxx。（x 表示一个数字）<br>
+你也可以假设每行前后没有多余的空格字符。</p>
+<p>示例:<br>
+假设 file.txt 内容如下：<br>
+987-123-4567<br>
+123 456 7890<br>
+(123) 456-7890<br>
+你的脚本应当输出下列有效的电话号码：<br>
+987-123-4567<br>
+(123) 456-7890</p>
+<p>解析思路：
+通过grep + 正则表达式的方式来过滤字符串</p>
+<p>grep -P  可以使用标准正则</p>
+<pre><code class="language-linux" data-lang="linux">grep -P '(\(\d{3}\)\s|\d{3}-)\d{3}-\d{4}' file.txt 
+</code></pre><p><a href="https://imgchr.com/i/GyKszQ">demo 有效电话号码</a></p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
