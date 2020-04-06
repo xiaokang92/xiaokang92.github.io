@@ -49,7 +49,7 @@ grep -P &#39;(\(\d{3}\)\s|\d{3}-)\d{3}-\d{4}&#39; file.txt demo 有效电话号�
       
       <guid>https://xiaokang92.github.io/post/robotframework%E4%B8%A4%E7%A7%8D%E4%B8%8B%E6%8B%89%E6%A1%86%E9%80%89%E6%8B%A9/</guid>
       <description>两种下拉框选择demo
-浏览器悬浮显示并选择 open browser https://tieba.baidu.com/ chrome maximize browser window add cookie BDUSS RzOVVQY09oaXAyeGFETTJIS3lXU2lUWk9iYTRUxjSmRIYmswZ3c2aDFsNFplRVFBQUFBJCQAAAAAAAAAAAEAAABEE-sk1Nm4x9K7wqUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHUKX151Cl9e add cookie STOKEN 3c6363cb0bede0cfd3ab8126b256cd0b7700ad471e491ce0cc56a40f147f6995 goto https://tieba.baidu.com/ mouse over xpath=//li[@class=&amp;#34;u_username&amp;#34;] mouse over xpath=//li[@class=&amp;#34;u_itieba&amp;#34;]/a mouse down xpath=//li[@class=&amp;#34;u_itieba&amp;#34;]/a mouse up xpath=//li[@class=&amp;#34;u_itieba&amp;#34;]/a 浏览器下拉框选择 open browser https://tieba.baidu.com/ chrome maximize browser window add cookie BDUSS RzOVVQY09oaXAyeGFETTJIS3lXU2lUWiYTBtRUxjSmRIYmswZ3c2aDFsNFplRVFBQUFBJCQAAAAAAAAAAAEAAABEE-sk1Nm4x9K7wqUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHUKX151Cl9e add cookie STOKEN 3c6363cb0bede0cfd3ab8126b256cd0b7700ad471e491ce0cc56a40f147f6995 goto https://tieba.baidu.com/ click button xpath=//input[@name=&amp;#34;kw1&amp;#34;] FOR ${i} IN RANGE 9 \ log ${i} \ Press Key xpath=//input[@name=&amp;#34;kw1&amp;#34;] \ue015 \ sleep 0.5 Press Key xpath=//input[@name=&amp;#34;kw1&amp;#34;] \\13 </description>
+浏览器悬浮显示并选择 open browser https://tieba.baidu.com/ chrome maximize browser window add cookie BDUSS RzOVVQY09oaXAyeGFETTJIS3lXU2lUWk9iYTRUxjSmRIYmswZ3c2aDFsNFplRVFBQUFBJCQAAAAAAAAAAAEAAABEE-sk1Nm4x9K7wqUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHUKX151Cl9e add cookie STOKEN 3c6363cb0bede0cfd3ab8126b256cd0b7700ad471e491ce0cc56a40f147f6995 goto https://tieba.baidu.com/ mouse over xpath=//li[@class=&amp;quot;u_username&amp;quot;] mouse over xpath=//li[@class=&amp;quot;u_itieba&amp;quot;]/a mouse down xpath=//li[@class=&amp;quot;u_itieba&amp;quot;]/a mouse up xpath=//li[@class=&amp;quot;u_itieba&amp;quot;]/a 浏览器下拉框选择 open browser https://tieba.baidu.com/ chrome maximize browser window add cookie BDUSS RzOVVQY09oaXAyeGFETTJIS3lXU2lUWiYTBtRUxjSmRIYmswZ3c2aDFsNFplRVFBQUFBJCQAAAAAAAAAAAEAAABEE-sk1Nm4x9K7wqUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHUKX151Cl9e add cookie STOKEN 3c6363cb0bede0cfd3ab8126b256cd0b7700ad471e491ce0cc56a40f147f6995 goto https://tieba.baidu.com/ click button xpath=//input[@name=&amp;quot;kw1&amp;quot;] FOR ${i} IN RANGE 9 \ log ${i} \ Press Key xpath=//input[@name=&amp;quot;kw1&amp;quot;] \ue015 \ sleep 0.5 Press Key xpath=//input[@name=&amp;quot;kw1&amp;quot;] \\13 RF代码展示.</description>
     </item>
     
     <item>
@@ -81,7 +81,8 @@ grep -P &#39;(\(\d{3}\)\s|\d{3}-)\d{3}-\d{4}&#39; file.txt demo 有效电话号�
       <guid>https://xiaokang92.github.io/post/robotframework%E8%87%AA%E5%AE%9A%E4%B9%89library/</guid>
       <description>RobotFramework是开源的项目，我们可以根据项目需要，对RF进行二次开发，比如可以自定义关键字库。
 自定义Library demo
-本文自定义了一个叫NewLibrary的库 C:\Users\Administrator\AppData\Local\Programs\Python\Python37\Lib\site-packages\NewLibrary  在\Lib\site-packages\目录下创建一个NewLibrary文件夹，并且新增两个py文件：init.py , myclass.py
+本文自定义了一个叫NewLibrary的库 NewLibrary
+C:\Users\Administrator\AppData\Local\Programs\Python\Python37\Lib\site-packages\NewLibrary  在\Lib\site-packages\目录下创建一个NewLibrary文件夹，并且新增两个py文件：init.py , myclass.py
 文件的内容如下：__init__.py
 from myclass import MyClass class NewLibrary(MyClass): ROBOT_LIBRARY_SCOPE = &amp;#39;GLOBAL&amp;#39; myclass.py
 from selenium import webdriver import time class MyClass(object): def __init__(self): pass def printMsg(self, msg): print(&amp;#34;hello&amp;#34; + msg) def SlideTieBa(self): browser = webdriver.Chrome() browser.implicitly_wait(30) browser.get(&amp;#34;https://tieba.baidu.com/&amp;#34;) browser.maximize_window() Listcookie = [{&amp;#39;name&amp;#39;:&amp;#34;STOKEN&amp;#34;,&amp;#39;value&amp;#39;:&amp;#34;3c6363cb0bede0cfd3ab8126b2700ad471e491ce0cc56a40f147f6995&amp;#34;} ,{&amp;#39;name&amp;#39;:&amp;#34;BDUSS&amp;#34;,&amp;#39;value&amp;#39;:&amp;#34;RzOVVQY09oaXAyeGFETTJIS3lXU2lUWk9iYTBtRUxjSmRIYmswZ3c2aDFsNFplRVFBQUFBJAAAEAAABEE-sk1Nm4x9K7wqUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHUKX151Cl9eVz&amp;#34;}] for cookie in Listcookie: browser.add_cookie(cookie) browser.get(&amp;#34;https://tieba.baidu.com/&amp;#34;) browser.refresh() for i in range(1000): t = i #tt = &amp;#39;window.scrollBy(0,&amp;#39; + str(t) + &amp;#39;)&amp;#39; tt = &amp;#39;window.</description>
@@ -95,6 +96,7 @@ from selenium import webdriver import time class MyClass(object): def __init__(s
       <guid>https://xiaokang92.github.io/post/cookie%E7%99%BB%E5%BD%95%E5%92%8C%E7%BC%93%E6%85%A2%E6%BB%9A%E5%8A%A8%E4%B8%8B%E6%BB%91/</guid>
       <description>cookie是手工登录账号后，通过get cookies获取的，然后再填入代码中。
 浏览器滚动是使用for循环，调用execute javascript方法并增加sleep实现的。
+Image Ride代码
 demo Cookie登录和缓慢滚动下滑
 ride edit中的代码
 浏览器滚动下滑 open browser https://tieba.baidu.com/ chrome maximize browser window add cookie BDUSS RzOVVQY09oaXAyeGFETTJIS3lXU2lUWk9iYTBtRUxjSmRIYmswZ2aDFsNFplRVFBQUFBJCQAAAAAAAAAAAEAAABEE-sk1Nm4x9K7wqUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHUKX151Cl9eVz add cookie STOKEN 3c6363cb0bede0cfd3ab8126b256cd0b7700ad471e491ce0cc56a40f147f6995 goto https://tieba.baidu.com/ FOR ${i} IN RANGE 1000 \ ${t} setvariable ${i}*5 \ evaluate str(${t}) \ ${tt} Catenate SEPARATOR= document.documentElement.scrollTop= ${t} \ execute javascript ${tt} \ sleep 0.01  </description>
@@ -106,9 +108,7 @@ ride edit中的代码
       <pubDate>Sun, 08 Mar 2020 10:40:12 +0800</pubDate>
       
       <guid>https://xiaokang92.github.io/post/666/</guid>
-      <description>⁶⁶ ⁶⁶⁶⁶⁶⁶ ⁶⁶66⁶⁶⁶⁶ ₆₆₆₆可以啊.这波 ₆₆₆₆⁶⁶⁶⁶⁶⁶卧槽 ⁶⁶666⁶⁶⁶⁶⁶⁶66⁶⁶⁶⁶ 卧槽⁶⁶⁶⁶⁶⁶ ⁶6666⁶⁶666₆₆₆₆₆ 666 ⁶⁶⁶⁶⁶⁶ 666666₆₆₆₆₆₆ ₆⁶⁶⁶ ⁶⁶⁶⁶⁶⁶ ⁶⁶66⁶⁶⁶⁶ ₆₆₆₆可以啊.这波 ₆₆₆₆⁶⁶⁶⁶⁶⁶卧槽 ⁶⁶666⁶⁶⁶⁶⁶⁶66⁶⁶⁶⁶ 卧⁶⁶⁶ ⁶⁶⁶⁶⁶⁶
-https://www.bilibili.com/video/av70816898/
-demo gif</description>
+      <description>⁶⁶ ⁶⁶⁶⁶⁶⁶ ⁶⁶66⁶⁶⁶⁶ ₆₆₆₆可以啊.这波 ₆₆₆₆⁶⁶⁶⁶⁶⁶卧槽 ⁶⁶666⁶⁶⁶⁶⁶⁶66⁶⁶⁶⁶ 卧槽⁶⁶⁶⁶⁶⁶ ⁶6666⁶⁶666₆₆₆₆₆ 666 ⁶⁶⁶⁶⁶⁶ 666666₆₆₆₆₆₆ ₆⁶⁶⁶ ⁶⁶⁶⁶⁶⁶ ⁶⁶66⁶⁶⁶⁶ ₆₆₆₆可以啊.这波 ₆₆₆₆⁶⁶⁶⁶⁶⁶卧槽 ⁶⁶666⁶⁶⁶⁶⁶⁶66⁶⁶⁶⁶ 卧⁶⁶⁶ ⁶⁶⁶⁶⁶⁶</description>
     </item>
     
     <item>
